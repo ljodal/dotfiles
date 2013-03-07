@@ -68,3 +68,8 @@ set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
 set gdefault                    " search/replace "globally" (on a line) by default
 set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
+
+" Theme settings
+set background=dark
+let g:solarized_termcolors=16
+colorscheme solarized
