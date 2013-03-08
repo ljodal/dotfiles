@@ -1,44 +1,132 @@
-" Use vim settings, rather then vi settings (much better!)
-" This must be first, because it changes other options as a side effect.
+" We're running Vim, not Vi!
 set nocompatible
 
-" Use pathogen to easily modify the runtime path to include all plugins under
-" the ~/.vim/bundle directory
-filetype off                    " force reloading *after* pathogen loaded
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin indent on       " enable detection, plugins and indenting in one step
-syntax on
+" Use pathogen
+execute pathogen#infect()
 
-" Change the mapleader from \ to ,
+" Set the leader key
 let mapleader=","
-let maplocalleader="\\"
 
-" Editing behaviour {{{
-set showmode                    " always show what mode we're currently editing in
-set nowrap                      " don't wrap lines
-set tabstop=4                   " a tab is four spaces
-set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
-set expandtab                   " expand tabs by default (overloadable per file type later)
-set shiftwidth=4                " number of spaces to use for autoindenting
-set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
-set backspace=indent,eol,start  " allow backspacing over everything in insert mode
-set autoindent                  " always set autoindenting on
-set copyindent                  " copy the previous indentation on autoindenting
-set number                      " always show line numbers
-set showmatch                   " set show matching parenthesis
-set ignorecase                  " ignore case when searching
-set smartcase                   " ignore case if search pattern is all lowercase,
-                                "    case-sensitive otherwise
-set smarttab                    " insert tabs on the start of a line according to
-                                "    shiftwidth, not tabstop
-set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
-set hlsearch                    " highlight search terms
-set incsearch                   " show search matches as you type
-set gdefault                    " search/replace "globally" (on a line) by default
-set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
+" Tag list setup
+map t :TlistToggle<CR>
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Show_Menu = 1
 
-" Theme settings
-set background=dark
-let g:solarized_termcolors=16
-colorscheme solarized
+" Nerd tree setup
+map f :NERDTreeToggle<CR>
+
+" Use correct shell
+set shell=/bin/sh
+
+"set nowrap        " don't wrap lines
+set tabstop=4     " a tab is four spaces
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+set number        " always show line numbers
+set shiftwidth=4  " number of spaces to use for autoindenting
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+"    case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to
+                  "    shiftwidth, not tabstop
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+set expandtab     " Use spaces, not tabs
+
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+" Don't use backup files
+set nobackup
+set noswapfile
+
+filetype plugin indent on
+
+" Spesific settings for file types
+autocmd filetype python set expandtab
+
+if &t_Co >= 256 || has("gui_running")
+    colorscheme jellybeans
+endif
+
+if &t_Co > 2 || has("gui_running")
+    " switch syntax highlighting on, when the terminal has colors
+    syntax on
+endif
+
+" Highlight spaces
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" Hide tab highlighting in make, html and xml files
+autocmd filetype html,xml,make,java set list!
+
+" Only autocomplete longest common
+set completeopt=menu,longest
+
+" Highlighting for cuda files
+"au BufNewFile,BufRead *.cu set ft=cu
+
+" Remove toolbar
+set guioptions-=T
+
+" Sets the font and size
+set guifont=Menlo\ Regular:h10
+
+" Quit vim if only nerd tree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+                \   if &omnifunc == "" |
+                \           setlocal omnifunc=syntaxcomplete#Complete |
+                \   endif
+endif
+
+" Word wrap?
+set linebreak
+
+if has("gui_macvim")
+    let macvim_hig_shift_movement = 1
+    set fullscreen
+endif
+
+let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
+
+"autocmd FileType *
+"    \ if &completefunc != '' |
+"    \   call SuperTabChain(&completefunc, "<c-x><x-u>") |
+"    \   call SuperTabSetDefaultCompletionType("<c-x><c-o>") |
+"    \ endif
+
+"ruby
+autocmd FileType ruby,eruby set completefunc=rubycomplete#Complete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+" Color scheme
+if has("gui_macvim") || has('gui_running')
+    set background=dark
+    colorscheme solarized
+endif
+
+" Tab completion on open
+set wildmenu
+set wildmode=list:longest
+
