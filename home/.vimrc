@@ -81,7 +81,7 @@ autocmd filetype html,xml,make,java set list!
 set completeopt=menu,longest
 
 " Highlighting for cuda files
-"au BufNewFile,BufRead *.cu set ft=cu
+au BufNewFile,BufRead *.cu set ft=cu
 
 " Remove toolbar
 set guioptions-=T
