@@ -49,7 +49,6 @@ set undolevels=1000      " use many muchos levels of undo
 " Ignore certain files from open menues
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.obj,.git,.dSYM
 set title                " change the terminal's title
-set visualbell           " don't beep
 set noerrorbells         " don't beep
 
 " Don't use backup files
