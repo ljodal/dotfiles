@@ -82,7 +82,9 @@ au BufNewFile,BufRead *.cu set ft=cu
 set guioptions-=T
 
 " Sets the font and size
-set guifont=Menlo\ Regular:h10
+if has("gui_macvim")
+    set guifont=Menlo\ Regular:h10
+endif
 
 " Quit vim if only nerd tree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
