@@ -111,6 +111,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
+" JQuery syntax
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
 " Color scheme
 if has("gui_macvim") || has('gui_running')
     set background=dark
