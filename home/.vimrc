@@ -88,13 +88,6 @@ endif
 " Quit vim if only nerd tree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-                \   if &omnifunc == "" |
-                \           setlocal omnifunc=syntaxcomplete#Complete |
-                \   endif
-endif
-
 " Word wrap?
 set linebreak
 
@@ -103,7 +96,7 @@ if has("gui_macvim")
     set fullscreen
 endif
 
-let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 "autocmd FileType *
 "    \ if &completefunc != '' |
