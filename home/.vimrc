@@ -112,7 +112,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 " JQuery syntax
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+let g:used_javascript_libs = 'jquery,backbone'
 
 " Color scheme
 if has("gui_macvim") || has('gui_running')

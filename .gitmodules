@@ -22,3 +22,6 @@
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "home/.vim/bundle/javascript-libraries-syntax"]
+	path = home/.vim/bundle/javascript-libraries-syntax
+	url = git://github.com/othree/javascript-libraries-syntax.vim.git
