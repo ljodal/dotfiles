@@ -91,8 +91,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Word wrap?
 set linebreak
 
+" Automatically go to fullscreen when using macvim
 if has("gui_macvim")
-    let macvim_hig_shift_movement = 1
     set fullscreen
 endif
 
