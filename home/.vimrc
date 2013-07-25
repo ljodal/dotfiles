@@ -75,7 +75,8 @@ autocmd filetype html,xml,make,java set list!
 set completeopt=menu,longest
 
 " Highlighting for cuda files
-au BufNewFile,BufRead *.cu set ft=cu
+au BufNewFile,BufRead *.cu set filetype=cpp
+"let g:syntastic_cuda_arch = "sm_21"
 
 " Remove toolbar
 set guioptions-=T
@@ -93,7 +94,7 @@ set linebreak
 
 " Automatically go to fullscreen when using macvim
 if has("gui_macvim")
-    set fullscreen
+    "set fullscreen
 endif
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
@@ -112,6 +113,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
 autocmd FileType ruby compiler ruby
 "autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
+" Syntax checking
+let g:syntastic_enable_signs=0
+
 " JQuery syntax
 let g:used_javascript_libs = 'jquery,backbone'
 
@@ -125,3 +129,5 @@ endif
 set wildmenu
 set wildmode=list:longest
 
+" Disable jslint
+set runtimepath-=~/.vim/bundle/jslint
