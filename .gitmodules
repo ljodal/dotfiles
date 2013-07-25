@@ -28,3 +28,9 @@
 [submodule "home/.vim/bundle/jslint"]
 	path = home/.vim/bundle/jslint
 	url = https://github.com/hallettj/jslint.vim.git
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "home/.vim/bundle/vim-javascript"]
+	path = home/.vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
