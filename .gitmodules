@@ -25,3 +25,6 @@
 [submodule "home/.vim/bundle/javascript-libraries-syntax"]
 	path = home/.vim/bundle/javascript-libraries-syntax
 	url = git://github.com/othree/javascript-libraries-syntax.vim.git
+[submodule "home/.vim/bundle/jslint"]
+	path = home/.vim/bundle/jslint
+	url = https://github.com/hallettj/jslint.vim.git
