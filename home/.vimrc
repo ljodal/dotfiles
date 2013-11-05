@@ -131,3 +131,7 @@ set wildmode=list:longest
 
 " Disable jslint
 set runtimepath-=~/.vim/bundle/jslint
+
+" Auto compile latex when saving
+au BufWritePost *.tex silent call Tex_RunLaTeX()
+au BufWritePost *.tex silent !pkill -USR1 xdvi.bin
