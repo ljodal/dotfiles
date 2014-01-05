@@ -11,7 +11,7 @@ let mapleader=","
 map t :TagbarToggle<CR>
 
 " Nerd tree setup
-map f :NERDTreeToggle<CR>
+"map f :NERDTreeToggle<CR>
 
 " Use correct shell
 set shell=/bin/sh
@@ -106,18 +106,26 @@ let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 "    \ endif
 
 "ruby
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
 autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
 autocmd FileType ruby compiler ruby
 "autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
+" LaTeX
+autocmd FileType tex set tw=100
+autocmd FileType tex set formatoptions+=t
+
 " Syntax checking
 let g:syntastic_enable_signs=0
 
 " JQuery syntax
 let g:used_javascript_libs = 'jquery,backbone'
+
+if has("gui_macvim")
+    let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/'
+endif
 
 " Color scheme
 if has("gui_macvim") || has('gui_running')
@@ -132,6 +140,22 @@ set wildmode=list:longest
 " Disable jslint
 set runtimepath-=~/.vim/bundle/jslint
 
-" Auto compile latex when saving
-au BufWritePost *.tex silent call Tex_RunLaTeX()
-au BufWritePost *.tex silent !pkill -USR1 xdvi.bin
+" Show airline all the time
+set laststatus=2
+
+" Vim airline config
+let g:airline#extensions#tabline#enabled = 1
+
+" Shortcuts for moving between tabs
+nnoremap <silent> <S-C-Right> gt
+nnoremap <silent> <S-C-Left> gT
+if has("gui_macvim")
+    nnoremap <silent> <D-S-Right> gt
+    nnoremap <silent> <D-S-Left> gT
+endif
+
+" Shortcuts for moving between splits
+nnoremap <silent> <C-Right> <c-w>l
+nnoremap <silent> <C-Left> <c-w>h
+nnoremap <silent> <C-Up> <c-w>k
+nnoremap <silent> <C-Down> <c-w>j
