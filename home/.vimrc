@@ -83,7 +83,7 @@ set guioptions-=T
 
 " Sets the font and size
 if has("gui_macvim")
-    set guifont=Menlo\ Regular:h10
+    set guifont=Menlo\ Regular\ for\ Powerline:h10
 endif
 
 " Quit vim if only nerd tree is open
@@ -128,7 +128,7 @@ if has("gui_macvim")
 endif
 
 " Color scheme
-if has("gui_macvim") || has('gui_running')
+if has('gui_running')
     set background=dark
     colorscheme solarized
 endif
@@ -145,6 +145,9 @@ set laststatus=2
 
 " Vim airline config
 let g:airline#extensions#tabline#enabled = 1
+if has("gui_running")
+    let g:airline_powerline_fonts = 1
+endif
 
 " Shortcuts for moving between tabs
 nnoremap <silent> <S-C-Right> gt
