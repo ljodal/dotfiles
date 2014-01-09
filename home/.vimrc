@@ -84,6 +84,8 @@ set guioptions-=T
 " Sets the font and size
 if has("gui_macvim")
     set guifont=Menlo\ Regular\ for\ Powerline:h10
+else
+    set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
 endif
 
 " Quit vim if only nerd tree is open
