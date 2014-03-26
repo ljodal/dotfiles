@@ -55,6 +55,11 @@ filetype plugin indent on
 " Spesific settings for file types
 autocmd filetype python set expandtab
 
+" Workaround! gnome-terminal supports 256 colors, but doesn't advertise its support
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
 if &t_Co >= 256 || has("gui_running")
     colorscheme jellybeans
 endif
