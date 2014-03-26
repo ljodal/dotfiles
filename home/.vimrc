@@ -40,6 +40,7 @@ filetype plugin on    " Enable filetype-specific plugins
 
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
+set mouse=a              " enable mouse for All modes
 
 " Ignore certain files from open menues
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.obj,.git,.dSYM
