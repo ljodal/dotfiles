@@ -172,19 +172,45 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
+"
+" Change some settings if I'm editing the bagadussii tromsø modules
+"
+function! Bagadussii()
+    let path = matchstr(expand("%:p:h"), "^.*bagadussii\/src\/tromso")
+    if !empty(path)
+        " Set the CtrlP search directory
+        noremap <C-P> <Esc>:CtrlP path<CR>
 
-"
-" Bagadussii load local settings
-"
-function! BagadussiiSettings()
-    let g = matchlist(expand("%:p:h"), "^.*\/bagadussii/src/tromso")
-    if len(g) > 0
-        let p = g[0]."/.vimrc.local"
-        if filereadable(p)
-            :execute 'so '.p
-        else
-            :echo "No bagadussii config file"
-        endif
+        " Check for a configuration file
+        let config_file = path.'/.vimrc.local'
+        if filereadable(config_file)
+            " Source the bagadussii configuration file
+            :execute 'so '.config_file
+        end
     endif
 endfunction
-autocmd BufReadPost,BufNewFile *bagadussii/src/tromso* call BagadussiiSettings()
+autocmd BufReadPost,BufNewFile *bagadussii/src/tromso* call Bagadussii()
+
+"
+" Change the settings if I'm editing my personal bagadussii files
+"
+function! BagadussiiSigurdlj()
+    let path = matchstr(expand("%:p:h"), "^.*bagadussii\/sigurdlj")
+    if !empty(path)
+        " Set the CtrlP search directory
+        noremap <C-P> <Esc>:CtrlP path<CR>
+    endif
+endfunction
+autocmd BufReadPost,BufNewFile *bagadussii/sigurdlj* call BagadussiiSigurdlj()
+
+"
+" Change the settings if I'm editing in the mkonline project
+"
+function! MKonline()
+    let path = matchstr(expand("%:p:h"), "^.*mkonline")
+    if !empty(path)
+        " Set the CtrlP search directory
+        noremap <C-P> <Esc>:CtrlP path<CR>
+    endif
+endfunction
+autocmd BufReadPost,BufNewFile *mkonline* call MKonline()
