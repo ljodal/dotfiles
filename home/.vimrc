@@ -171,3 +171,20 @@ nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
+
+
+"
+" Bagadussii load local settings
+"
+function! BagadussiiSettings()
+    let g = matchlist(expand("%:p:h"), "^.*\/bagadussii/src/tromso")
+    if len(g) > 0
+        let p = g[0]."/.vimrc.local"
+        if filereadable(p)
+            :execute 'so '.p
+        else
+            :echo "No bagadussii config file"
+        endif
+    endif
+endfunction
+autocmd BufReadPost,BufNewFile *bagadussii/src/tromso* call BagadussiiSettings()
