@@ -128,6 +128,22 @@ autocmd FileType tex set formatoptions+=t
 
 " Syntax checking
 let g:syntastic_enable_signs=0
+let g:syntastic_c_include_dirs = [
+            \'/usr/local/cuda/include',
+            \'/opt/dis/include',
+            \'/opt/dis/include/dis',
+            \'/opt/dis/include/os']
+let g:syntastic_cpp_include_dirs = [
+            \'/usr/local/cuda/include',
+            \'/opt/dis/include',
+            \'/opt/dis/include/dis',
+            \'/opt/dis/include/os']
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
+" C and C++ editing
+autocmd FileType c,cpp set colorcolumn=80
+let g:clang_complete_macros = 1
 
 " JQuery syntax
 let g:used_javascript_libs = 'jquery,backbone'
@@ -171,6 +187,8 @@ nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
+
+imap <M-Space> <Space>
 
 "
 " Change some settings if I'm editing the bagadussii tromsø modules
