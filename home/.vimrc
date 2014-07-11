@@ -87,6 +87,14 @@ au BufNewFile,BufRead *.cu set filetype=cpp
 " Remove toolbar
 set guioptions-=T
 
+" Remove scrollbars
+if has("gui_macvim")
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=r
+    set guioptions-=R
+endif
+
 " Sets the font and size
 if has("gui_macvim")
     set guifont=Menlo\ Regular\ for\ Powerline:h10
@@ -139,7 +147,7 @@ let g:syntastic_cpp_include_dirs = [
             \'/opt/dis/include/dis',
             \'/opt/dis/include/os']
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++ -DHAVE_CUDA -DHAVE_SISCI'
 
 " C and C++ editing
 autocmd FileType c,cpp set colorcolumn=80
@@ -204,7 +212,13 @@ function! Bagadussii()
         if filereadable(config_file)
             " Source the bagadussii configuration file
             :execute 'so '.config_file
-        end
+
+            " Set low visibility of highlighted characters
+            "if has("gui_running")
+            "    let g:solarized_visibility='low'
+            "    colorscheme solarized
+            "endif
+        endif
     endif
 endfunction
 autocmd BufReadPost,BufNewFile *bagadussii/src/tromso* call Bagadussii()
