@@ -99,7 +99,7 @@ endif
 if has("gui_macvim")
     set guifont=Menlo\ Regular\ for\ Powerline:h10
 else
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9.5
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 "    set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
 endif
 
