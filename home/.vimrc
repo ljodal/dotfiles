@@ -148,13 +148,11 @@ let g:syntastic_cpp_include_dirs = [
             \'/opt/dis/include/os']
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++ -DHAVE_CUDA -DHAVE_SISCI'
+let g:syntastic_javascript_checkers = ['eslint']
 
 " C and C++ editing
 autocmd FileType c,cpp set colorcolumn=80
 let g:clang_complete_macros = 1
-
-" JQuery syntax
-let g:used_javascript_libs = 'jquery,backbone'
 
 if has("gui_macvim")
     let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/'
@@ -169,9 +167,6 @@ endif
 " Tab completion on open
 set wildmenu
 set wildmode=list:longest
-
-" Disable jslint
-set runtimepath-=~/.vim/bundle/jslint
 
 " Show airline all the time
 set laststatus=2

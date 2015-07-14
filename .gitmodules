@@ -19,12 +19,6 @@
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "home/.vim/bundle/javascript-libraries-syntax"]
-	path = home/.vim/bundle/javascript-libraries-syntax
-	url = git://github.com/othree/javascript-libraries-syntax.vim.git
-[submodule "home/.vim/bundle/jslint"]
-	path = home/.vim/bundle/jslint
-	url = https://github.com/hallettj/jslint.vim.git
 [submodule "home/.vim/bundle/syntastic"]
 	path = home/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
@@ -55,3 +49,9 @@
 [submodule "home/.vim/bundle/vim-gradle"]
 	path = home/.vim/bundle/vim-gradle
 	url = https://github.com/tfnico/vim-gradle.git
+[submodule "home/.vim/bundle/vim-jsx"]
+	path = home/.vim/bundle/vim-jsx
+	url = git@github.com:mxw/vim-jsx.git
+[submodule "home/.vim/bundle/vim-flow"]
+	path = home/.vim/bundle/vim-flow
+	url = git://github.com/facebook/vim-flow.git
