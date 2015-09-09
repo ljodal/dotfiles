@@ -55,3 +55,6 @@
 [submodule "home/.vim/bundle/vim-flow"]
 	path = home/.vim/bundle/vim-flow
 	url = git://github.com/facebook/vim-flow.git
+[submodule "home/.vim/bundle/vim-puppet"]
+	path = home/.vim/bundle/vim-puppet
+	url = git://github.com/rodjek/vim-puppet.git
