@@ -150,7 +150,7 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++ -DHAVE_CUDA -DHAVE_SISCI'
 let g:syntastic_javascript_checkers = ['flow']
 
-" Disable flow, as checking is done with syntastic
+" Disable vim-flow, as syntastic handles flow
 let g:flow#enable = 0
 
 " C and C++ editing
