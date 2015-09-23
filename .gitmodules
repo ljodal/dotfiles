@@ -58,3 +58,6 @@
 [submodule "home/.vim/bundle/vim-puppet"]
 	path = home/.vim/bundle/vim-puppet
 	url = git://github.com/rodjek/vim-puppet.git
+[submodule "home/.vim/bundle/vim-swift"]
+	path = home/.vim/bundle/vim-swift
+	url = git://github.com/toyamarinyon/vim-swift.git
