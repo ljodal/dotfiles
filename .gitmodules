@@ -61,3 +61,6 @@
 [submodule "home/.vim/bundle/vim-swift"]
 	path = home/.vim/bundle/vim-swift
 	url = git://github.com/kballard/vim-swift.git
+[submodule "home/.vim/bundle/python-mode"]
+	path = home/.vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
