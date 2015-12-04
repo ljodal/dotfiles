@@ -130,6 +130,12 @@ autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
 autocmd FileType ruby compiler ruby
 "autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
+" Python
+let g:pymode_folding=0
+let g:pymode_options_max_line_length=100
+let g:syntastic_python_checkers = ['flake8', 'pylint']
+let g:syntastic_python_flake8_args = "--max-line-length=100 --ignore=E702,E731,E226"
+
 " LaTeX
 autocmd FileType tex set tw=100
 autocmd FileType tex set formatoptions+=t
