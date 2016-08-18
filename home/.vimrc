@@ -154,10 +154,10 @@ let g:syntastic_cpp_include_dirs = [
             \'/opt/dis/include/os']
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++ -DHAVE_CUDA -DHAVE_SISCI'
-let g:syntastic_javascript_checkers = ['flow']
+let g:syntastic_mode_map = {
+        \ "passive_filetypes": ["javascript"] }
 
-" Disable vim-flow, as syntastic handles flow
-let g:flow#enable = 0
+let g:flow#enable = 1
 
 " C and C++ editing
 autocmd FileType c,cpp set colorcolumn=80
