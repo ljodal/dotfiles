@@ -52,9 +52,6 @@
 [submodule "home/.vim/bundle/vim-jsx"]
 	path = home/.vim/bundle/vim-jsx
 	url = git@github.com:mxw/vim-jsx.git
-[submodule "home/.vim/bundle/vim-flow"]
-	path = home/.vim/bundle/vim-flow
-	url = git://github.com/facebook/vim-flow.git
 [submodule "home/.vim/bundle/vim-puppet"]
 	path = home/.vim/bundle/vim-puppet
 	url = git://github.com/rodjek/vim-puppet.git
@@ -64,3 +61,6 @@
 [submodule "home/.vim/bundle/python-mode"]
 	path = home/.vim/bundle/python-mode
 	url = https://github.com/klen/python-mode.git
+[submodule "home/.vim/bundle/vim-flow"]
+	path = home/.vim/bundle/vim-flow
+	url = git://github.com/flowtype/vim-flow.git
