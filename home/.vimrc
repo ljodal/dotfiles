@@ -105,6 +105,7 @@ endif
 
 " Quit vim if only nerd tree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$', '^__pycache__$']
 
 " Word wrap?
 set linebreak
@@ -169,9 +170,9 @@ endif
 
 " Color scheme
 if has('gui_running')
-    set background=dark
-    colorscheme solarized
-    let g:solarized_termcolors=256
+    " set background=dark
+    colorscheme spacedust
+    " let g:solarized_termcolors=256
 endif
 
 " Tab completion on open
