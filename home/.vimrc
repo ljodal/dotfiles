@@ -159,6 +159,7 @@ let g:syntastic_mode_map = {
         \ "passive_filetypes": ["javascript"] }
 
 let g:flow#enable = 1
+let g:javascript_plugin_flow = 1
 
 " C and C++ editing
 autocmd FileType c,cpp set colorcolumn=80
