@@ -43,7 +43,7 @@ set undolevels=1000      " use many muchos levels of undo
 set mouse=a              " enable mouse for All modes
 
 " Ignore certain files from open menues
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.obj,.git,.dSYM
+set wildignore+=*/node_modules/*,*.swp,*.bak,*.pyc,*.class,*.o,*.obj,.git,.dSYM
 set title                " change the terminal's title
 set noerrorbells         " don't beep
 
