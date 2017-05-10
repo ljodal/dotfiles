@@ -131,11 +131,19 @@ autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
 autocmd FileType ruby compiler ruby
 "autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
+" Python paths
+if has("gui_macvim")
+    set pythonhome=$HOME/.pyenv/versions/2.7.11
+    set pythondll=$HOME/.pyenv/versions/2.7.11/lib/libpython2.7.dylib
+    set pythonthreehome=$HOME/.pyenv/versions/3.6.0
+    set pythonthreedll=$HOME/.pyenv/versions/3.6.0/lib/libpython3.6m.dylib
+endif
+
 " Python
+let g:pymode_python = 'python3'
 let g:pymode_folding=0
-let g:pymode_options_max_line_length=100
 let g:syntastic_python_checkers = ['flake8', 'pylint']
-let g:syntastic_python_flake8_args = "--max-line-length=100 --ignore=E702,E731,E226"
+let g:syntastic_python_flake8_args = "--max-line-length=80 --ignore=E702,E731,E226"
 
 " LaTeX
 autocmd FileType tex set tw=100
