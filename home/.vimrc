@@ -97,7 +97,7 @@ endif
 
 " Sets the font and size
 if has("gui_macvim")
-    set guifont=Menlo\ Regular\ for\ Powerline:h10
+    set guifont=Menlo\ Regular\ for\ Powerline:h11
 else
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 "    set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
@@ -180,7 +180,8 @@ endif
 " Color scheme
 if has('gui_running')
     " set background=dark
-    colorscheme spacedust
+    " colorscheme spacedust
+    colorscheme flatlandia
     " let g:solarized_termcolors=256
 endif
 
