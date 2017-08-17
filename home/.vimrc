@@ -139,8 +139,8 @@ let g:syntastic_python_flake8_args = "--max-line-length=80 --ignore=E702,E731,E2
 
 " Python paths
 if has("gui_macvim")
-    set pythonhome=$HOME/.pyenv/versions/2.7.11
-    set pythondll=$HOME/.pyenv/versions/2.7.11/lib/libpython2.7.dylib
+    set pythonhome=$HOME/.pyenv/versions/2.7.13
+    set pythondll=$HOME/.pyenv/versions/2.7.13/lib/libpython2.7.dylib
     set pythonthreehome=$HOME/.pyenv/versions/3.6.0
     set pythonthreedll=$HOME/.pyenv/versions/3.6.0/lib/libpython3.6m.dylib
 endif
