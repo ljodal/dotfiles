@@ -88,3 +88,6 @@
 [submodule "home/.local/share/nvim/site/pack/git-plugins/opt/flatlandia"]
 	path = home/.local/share/nvim/site/pack/git-plugins/opt/flatlandia
 	url = https://github.com/jordwalke/flatlandia.git
+[submodule "home/.vim/bundle/ctrlp"]
+	path = home/.vim/bundle/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
