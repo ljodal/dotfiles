@@ -19,9 +19,6 @@
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "home/.vim/bundle/syntastic"]
-	path = home/.vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "home/.vim/bundle/vim-javascript"]
 	path = home/.vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
@@ -91,3 +88,9 @@
 [submodule "home/.vim/bundle/ctrlp"]
 	path = home/.vim/bundle/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "home/.vim/bundle/vim-ale"]
+	path = home/.vim/bundle/vim-ale
+	url = git@github.com:w0rp/ale.git
+[submodule "home/.vim/bundle/vipsql"]
+	path = home/.vim/bundle/vipsql
+	url = git@github.com:martingms/vipsql.git

@@ -131,11 +131,44 @@ autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
 autocmd FileType ruby compiler ruby
 "autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
+" Scss
+let g:syntastic_scss_checkers = ['scss_lint']
+
 " Python
-let g:pymode_python = 'python3'
+"let g:pymode_python = 'python3'
+" Disable pymode rope
 let g:pymode_folding=0
-let g:syntastic_python_checkers = ['flake8', 'pylint']
-let g:syntastic_python_flake8_args = "--max-line-length=80 --ignore=E702,E731,E226"
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_autoimport = 0
+
+"let g:syntastic_python_checkers = ['flake8', 'pylint']
+"let g:syntastic_python_flake8_exec = '/Users/sigurdljodal/.pyenv/versions/tienda/bin/flake8'
+"let g:syntastic_python_pylint_exec = '/Users/sigurdljodal/Code/tienda/bin/pylint'
+"let g:syntastic_python_flake8_args = "--max-line-length=80 --ignore=E702,E731,E226"
+
+
+let g:ale_linters = {
+    \'python': ['flake8', 'pylint', 'pyflakes'],
+\}
+" let g:ale_python_flake8_executable = '/Users/sigurdljodal/Code/tienda/bin/flake8'
+" let g:ale_python_flake8_use_global = 1
+" let g:ale_python_pylint_executable = '/Users/sigurdljodal/Code/tienda/bin/pylint'
+" let g:ale_python_pylint_use_global = 1
+" let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
+" let g:ale_python_pyflakes_executable = '/home/sigurdljodal/Code/tienda/bin/pyflakes'
+" let g:ale_python_pyflakes_use_global = 1
+" let g:ale_python_isort_executable = '/home/sigurdljodal/Code/tienda/bin/isort'
+" let g:ale_python_isort_use_global = 1
+
+let g:ale_fixers = {
+\   'python': ['isort', 'black'],
+\   'javascript': ['prettier'],
+\}
+
+" Run fixer on save
+let g:ale_fix_on_save = 1
 
 " Python paths
 if has("gui_macvim")
@@ -201,7 +234,7 @@ endif
 " Shortcuts for moving between tabs
 nnoremap <silent> <S-C-Right> gt
 nnoremap <silent> <S-C-Left> gT
-if has("gui_macvim")
+if has("gui_vimr")
     nnoremap <silent> <D-S-Right> gt
     nnoremap <silent> <D-S-Left> gT
 endif
