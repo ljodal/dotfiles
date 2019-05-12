@@ -73,3 +73,21 @@
 [submodule "home/.vim/bundle/flatlandia"]
 	path = home/.vim/bundle/flatlandia
 	url = https://github.com/jordwalke/flatlandia.git
+[submodule "home/.local/share/nvim/site/pack/git-plugins/start/ale"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "home/.local/share/nvim/site/pack/git-plugins/start/nerdtree"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "home/.local/share/nvim/site/pack/git-plugins/start/flatlandia"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/flatlandia
+	url = https://github.com/jordwalke/flatlandia.git
+[submodule "home/.local/share/nvim/site/pack/git-plugins/start/supertab"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/supertab
+	url = git@github.com:ervandew/supertab.git
+[submodule "home/.local/share/nvim/site/pack/git-plugins/start/ctrlp"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
+[submodule "home/.local/share/nvim/site/pack/git-plugins/start/YouCompleteMe"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
