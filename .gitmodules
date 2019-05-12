@@ -79,8 +79,8 @@
 [submodule "home/.local/share/nvim/site/pack/git-plugins/start/nerdtree"]
 	path = home/.local/share/nvim/site/pack/git-plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "home/.local/share/nvim/site/pack/git-plugins/start/flatlandia"]
-	path = home/.local/share/nvim/site/pack/git-plugins/start/flatlandia
+[submodule "home/.local/share/nvim/site/pack/git-plugins/opt/flatlandia"]
+	path = home/.local/share/nvim/site/pack/git-plugins/opt/flatlandia
 	url = https://github.com/jordwalke/flatlandia.git
 [submodule "home/.local/share/nvim/site/pack/git-plugins/start/supertab"]
 	path = home/.local/share/nvim/site/pack/git-plugins/start/supertab
