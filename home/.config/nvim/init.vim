@@ -78,6 +78,7 @@ let g:ale_completion_enabled = 1
 
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
+\   'javascript': ['prettier'],
 \}
 
 " Set this variable to 1 to fix files when you save them.
