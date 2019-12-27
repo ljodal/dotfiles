@@ -57,8 +57,8 @@ function __python_version() {
     # If a non-default Python version is set, show that in the prompt
     if [ -n "$PYENV_VERSION" ]; then
         echo " %F{blue}$PYENV_VERSION%f"
-    elif [ -n "$VIRTUAL_ENV" ]; then
-        echo " (%F{blue}$(grep -o '\d\+\.\d\+\.\d\+' <<< "$VIRTUAL_ENV")%f)"
+    elif [[ $VIRTUAL_ENV =~ 'versions/([0-9]+\.[0-9]+\.[0-9]+)/' ]]; then
+        echo " (%F{blue}${match[1]}%f)"
     else
         echo ''
     fi
