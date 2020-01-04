@@ -1,9 +1,5 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
-" source ~/.vimrc
-
-" let g:python_host_prog = '/Users/sigurd/.pyenv/shims/python2.7'
-" let g:python3_host_prog = '/Users/sigurd/.pyenv/shims/python3.6'
 
 " Basic config
 set tabstop=4     " a tab is four spaces
@@ -57,20 +53,6 @@ if has("gui_vimr")
 endif
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-
-let g:ale_c_clang_options = ''
-            \ . ' -I/opt/esp/esp-idf/components/freertos/include'
-            \ . ' -I/opt/esp/esp-idf/components/driver/include'
-            \ . ' -I/opt/esp/esp-idf/components/esp32/include'
-            \ . ' -I/opt/esp/esp-idf/components/esp_event/include'
-            \ . ' -I/opt/esp/esp-idf/components/newlib/include'
-
-let g:ale_c_gcc_options = ''
-            \ . ' -I/opt/esp/esp-idf/components/freertos/include'
-            \ . ' -I/opt/esp/esp-idf/components/driver/include'
-            \ . ' -I/opt/esp/esp-idf/components/esp32/include'
-            \ . ' -I/opt/esp/esp-idf/components/esp_event/include'
-            \ . ' -I/opt/esp/esp-idf/components/newlib/include'
 
 let g:ale_virtualenv_dir_names = ['.venv']
 
