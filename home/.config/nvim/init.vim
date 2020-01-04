@@ -58,28 +58,36 @@ endif
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
+let g:ale_c_clang_options = ''
+            \ . ' -I/opt/esp/esp-idf/components/freertos/include'
+            \ . ' -I/opt/esp/esp-idf/components/driver/include'
+            \ . ' -I/opt/esp/esp-idf/components/esp32/include'
+            \ . ' -I/opt/esp/esp-idf/components/esp_event/include'
+            \ . ' -I/opt/esp/esp-idf/components/newlib/include'
+
+let g:ale_c_gcc_options = ''
+            \ . ' -I/opt/esp/esp-idf/components/freertos/include'
+            \ . ' -I/opt/esp/esp-idf/components/driver/include'
+            \ . ' -I/opt/esp/esp-idf/components/esp32/include'
+            \ . ' -I/opt/esp/esp-idf/components/esp_event/include'
+            \ . ' -I/opt/esp/esp-idf/components/newlib/include'
+
 let g:ale_virtualenv_dir_names = ['.venv']
 
-" Set up python virtualenvs
-" let g:python_host_prog = "/Users/sigurd/.pyenv/versions/neovim2/bin/python"
-" let g:python3_host_prog = "/Users/sigurd/.pyenv/versions/neovim3/bin/python"
+let g:ale_sql_pgformatter_options = '-w 80 -u 1'
 
 " Enable ALE completion where available.
 let g:ale_completion_enabled = 1
 
-" Paths to python linters
-" let g:ale_python_flake8_executable = "/Users/sigurd/.pyenv/versions/neovim3/bin/flake8"
-" let g:ale_python_mypy_executable = "/Users/sigurd/.pyenv/versions/neovim3/bin/mypy"
-" let g:ale_python_pylint_executable = "/Users/sigurd/.pyenv/versions/neovim3/bin/pylint"
-
-" Paths to python fixers
-" let g:ale_python_isort_executable = "/Users/sigurd/.pyenv/versions/neovim3/bin/isort"
-" let g:ale_python_black_executable = "/Users/sigurd/.pyenv/versions/neovim3/bin/black"
-
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
 \   'javascript': ['prettier'],
+\   'c': ['clang-format'],
+\   'h': ['clang-format'],
+\   'sql': ['pgformatter'],
 \}
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+
+let g:sql_type_default = 'pgsql'

@@ -10,6 +10,9 @@ alias la='ls -AlG'
 # Add fastlane to path
 export PATH="$HOME/.fastlane/bin:$PATH"
 
+# Add homebrew sbin to path
+export PATH="/usr/local/sbin:$PATH"
+
 # Add local bin files to path
 export PATH="$PATH:$HOME/.bin"
 
@@ -56,7 +59,7 @@ local DEFAULT_PYTHON_VERSION="$(pyenv global)"
 function __python_version() {
     # If a non-default Python version is set, show that in the prompt
     if [ -n "$PYENV_VERSION" ]; then
-        echo " %F{blue}$PYENV_VERSION%f"
+        echo " (%F{blue}$PYENV_VERSION%f)"
     elif [[ $VIRTUAL_ENV =~ 'versions/([0-9]+\.[0-9]+\.[0-9]+)/' ]]; then
         echo " (%F{blue}${match[1]}%f)"
     else
