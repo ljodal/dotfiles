@@ -93,7 +93,7 @@ export PATH="$HOME/.poetry/bin:$PATH";
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # Alias for less with synatx highlighting
-alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -M '
+alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -mR '
 
 export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
 

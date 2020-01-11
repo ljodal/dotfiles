@@ -73,3 +73,6 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 let g:sql_type_default = 'pgsql'
+
+" Ignore pyc and __pycache__ in NERDTree menues
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
