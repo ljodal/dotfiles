@@ -3,6 +3,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -Uz compinit && compinit
 
+export EDITOR=nvim
+
 # Aliases
 alias ll='ls -lG'
 alias la='ls -AlG'
@@ -89,13 +91,12 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 export PATH="$HOME/.poetry/bin:$PATH";
 
-# Add libpq (psql etc. to path)
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-
 # Alias for less with synatx highlighting
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -mR '
 
+# Add libpq (psql etc.) and postgresql to path
 export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 eval $(thefuck --alias)
 
