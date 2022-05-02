@@ -10,10 +10,6 @@
 [submodule "home/.local/share/nvim/site/pack/git-plugins/start/ctrlp"]
 	path = home/.local/share/nvim/site/pack/git-plugins/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
-[submodule "home/.local/share/nvim/site/pack/git-plugins/start/YouCompleteMe"]
-	path = home/.local/share/nvim/site/pack/git-plugins/start/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-	branch = master
 [submodule "home/.local/share/nvim/site/pack/git-plugins/opt/flatlandia"]
 	path = home/.local/share/nvim/site/pack/git-plugins/opt/flatlandia
 	url = https://github.com/jordwalke/flatlandia.git
@@ -26,3 +22,7 @@
 [submodule "home/.local/share/nvim/site/pack/git-plugins/start/vim-hcl"]
 	path = home/.local/share/nvim/site/pack/git-plugins/start/vim-hcl
 	url = https://github.com/jvirtanen/vim-hcl.git
+[submodule "home/.local/share/nvim/site/pack/coc/start/coc"]
+	path = home/.local/share/nvim/site/pack/coc/start/coc
+	url = https://github.com/neoclide/coc.nvim.git
+	branch = release
