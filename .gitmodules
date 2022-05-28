@@ -23,3 +23,7 @@
 	path = home/.local/share/nvim/site/pack/coc/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 	branch = release
+[submodule "home/.local/share/nvim/site/pack/git-plugins/nord"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/nord
+	url = https://github.com/arcticicestudio/nord-vim.git
+	branch = main

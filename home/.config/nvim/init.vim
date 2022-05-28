@@ -44,7 +44,7 @@ set completeopt=menu,longest
 set wildmode=longest,list,full
 set wildmenu
 
-colorscheme flatlandia
+colorscheme nord
 
 if has("gui_vimr")
   " Shortcuts for moving between tabs
