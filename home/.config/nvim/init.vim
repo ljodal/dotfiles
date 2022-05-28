@@ -44,9 +44,9 @@ set completeopt=menu,longest
 set wildmode=longest,list,full
 set wildmenu
 
-if has("gui_vimr")
-  colorscheme flatlandia
+colorscheme flatlandia
 
+if has("gui_vimr")
   " Shortcuts for moving between tabs
   nnoremap <silent> <D-S-Right> gt
   nnoremap <silent> <D-S-Left> gT

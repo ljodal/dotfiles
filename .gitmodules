@@ -10,9 +10,6 @@
 [submodule "home/.local/share/nvim/site/pack/git-plugins/start/ctrlp"]
 	path = home/.local/share/nvim/site/pack/git-plugins/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
-[submodule "home/.local/share/nvim/site/pack/git-plugins/opt/flatlandia"]
-	path = home/.local/share/nvim/site/pack/git-plugins/opt/flatlandia
-	url = https://github.com/jordwalke/flatlandia.git
 [submodule "home/.local/share/nvim/site/pack/git-plugins/start/vipsql"]
 	path = home/.local/share/nvim/site/pack/git-plugins/start/vipsql
 	url = https://github.com/martingms/vipsql
