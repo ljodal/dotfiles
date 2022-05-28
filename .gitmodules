@@ -27,3 +27,7 @@
 	path = home/.local/share/nvim/site/pack/git-plugins/start/nord
 	url = https://github.com/arcticicestudio/nord-vim.git
 	branch = main
+[submodule "home/.local/share/nvim/site/pack/git-plugins/start/gitgutter"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+	branch = master

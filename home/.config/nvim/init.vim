@@ -76,3 +76,6 @@ let g:sql_type_default = 'pgsql'
 
 " Ignore pyc and __pycache__ in NERDTree menues
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
+
+" Alwayss show the sign column where git status is shown
+set signcolumn=yes
