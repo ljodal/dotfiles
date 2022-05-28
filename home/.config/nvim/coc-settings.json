@@ -1,0 +1,10 @@
+{
+    "diagnostic.errorSign": "→",
+    "diagnostic.warningSign": "→",
+    "diagnostic.infoSign": "→",
+    "diagnostic.hintSign": "→",
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.analysis.typeCheckingMode": "off",
+    "pyright.organizeimports.provider": "isort"
+}
