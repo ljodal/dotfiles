@@ -9,18 +9,11 @@ export EDITOR=nvim
 alias ll='ls -lG'
 alias la='ls -AlG'
 
-# Add fastlane to path
-export PATH="$HOME/.fastlane/bin:$PATH"
-
-# Add homebrew sbin to path
-export PATH="/usr/local/sbin:$PATH"
-
 # Add local bin files to path
-export PATH="$PATH:$HOME/.bin"
+export PATH="$HOME/.bin:$PATH"
 
 # gettext (installed with homebrew)
 export PATH=$PATH:/usr/local/Cellar/gettext/0.19.8.1/bin
-export PATH=/usr/local/opt/node@6/bin:$PATH
 
 # Enable direnv
 eval "$(direnv hook zsh)"
@@ -67,3 +60,13 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+
+# setup-venv <port>
+function setup-venv {
+    readonly version=${1:?"Python version must be specified"}
+
+    "/opt/homebrew/opt/python@$version/bin/python3" -m venv .venv
+    echo 'load_prefix "$(pwd)/.venv/"\nexport VIRTUAL_ENV="$(pwd)/.venv/"' >> .envrc
+    direnv allow .
+}

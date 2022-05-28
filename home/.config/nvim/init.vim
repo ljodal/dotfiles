@@ -59,7 +59,7 @@ let g:ale_virtualenv_dir_names = ['.venv']
 let g:ale_sql_pgformatter_options = '-w 80 -u 1'
 
 " Enable ALE completion where available.
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
