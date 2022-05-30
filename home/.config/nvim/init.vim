@@ -46,21 +46,27 @@ set wildmenu
 
 colorscheme nord
 
+let mapleader = ","
+
+" Ignore pyc and __pycache__ in NERDTree menues
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
+nnoremap <leader>n :NERDTreeFocus<cr>
+
 if has("gui_vimr")
   " Shortcuts for moving between tabs
   nnoremap <silent> <D-S-Right> gt
   nnoremap <silent> <D-S-Left> gT
 endif
 
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-
 let g:ale_virtualenv_dir_names = ['.venv']
 
-let g:ale_sql_pgformatter_options = '-w 80 -u 1'
-
-" Enable ALE completion where available.
+" Disable completion through ale, I use coc instead
 let g:ale_completion_enabled = 0
+let g:ale_sign_error = "››"
+let g:ale_sign_warning = "››"
 
+" Enable autofixing on save using ale
+let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'python': ['isort', 'black'],
 \   'javascript': ['prettier'],
@@ -68,14 +74,37 @@ let g:ale_fixers = {
 \   'h': ['clang-format'],
 \   'sql': ['pgformatter'],
 \}
-
-" Set this variable to 1 to fix files when you save them.
-let g:ale_fix_on_save = 1
+let g:ale_sql_pgformatter_options = '-w 80 -u 1'
 
 let g:sql_type_default = 'pgsql'
 
-" Ignore pyc and __pycache__ in NERDTree menues
-let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
+"
+" Coc config
+"
 
-" Alwayss show the sign column where git status is shown
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Always show the sign column where git status is shown
 set signcolumn=yes
+autocmd FileType nerdtree setlocal signcolumn=no " Not in NERDTree
