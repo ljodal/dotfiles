@@ -3,5 +3,6 @@
     "diagnostic.warningSign": "››",
     "diagnostic.infoSign": "››",
     "diagnostic.hintSign": "››",
+    "suggest.noselect": true,
     "python.analysis.typeCheckingMode": "off"
 }
