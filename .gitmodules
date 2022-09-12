@@ -28,3 +28,6 @@
 	path = home/.local/share/nvim/site/pack/git-plugins/start/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 	branch = master
+[submodule "home/.local/share/nvim/site/pack/git-plugins/start/pytest"]
+	path = home/.local/share/nvim/site/pack/git-plugins/start/pytest
+	url = https://github.com/alfredodeza/pytest.vim.git

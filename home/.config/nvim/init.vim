@@ -64,6 +64,7 @@ let g:ale_virtualenv_dir_names = ['.venv']
 let g:ale_completion_enabled = 0
 let g:ale_sign_error = "››"
 let g:ale_sign_warning = "››"
+let g:ale_sign_highlight_linenrs = 1
 
 " Enable autofixing on save using ale
 let g:ale_fix_on_save = 1
@@ -108,3 +109,8 @@ endfunction
 " Always show the sign column where git status is shown
 set signcolumn=yes
 autocmd FileType nerdtree setlocal signcolumn=no " Not in NERDTree
+
+" Pytest
+nmap <silent><Leader>f <Esc>:Pytest file<CR>
+nmap <silent><Leader>c <Esc>:Pytest class<CR>
+nmap <silent><Leader>m <Esc>:Pytest method<CR>
