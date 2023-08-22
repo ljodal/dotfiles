@@ -10,7 +10,7 @@ alias ll='ls -lG'
 alias la='ls -AlG'
 
 # Add local bin files to path
-export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 
 # gettext (installed with homebrew)
 export PATH=$PATH:/usr/local/Cellar/gettext/0.19.8.1/bin
@@ -65,7 +65,7 @@ if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-clou
 function setup-venv {
     readonly version=${1:?"Python version must be specified"}
 
-    "/opt/homebrew/opt/python@$version/bin/python3" -m venv .venv
+    "python$version" -m venv .venv
     echo 'load_prefix "$(pwd)/.venv/"\nexport VIRTUAL_ENV="$(pwd)/.venv/"' >> .envrc
     direnv allow .
 }
