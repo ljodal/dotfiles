@@ -4,5 +4,6 @@
     "diagnostic.infoSign": "››",
     "diagnostic.hintSign": "››",
     "suggest.noselect": true,
-    "python.analysis.typeCheckingMode": "off"
+    "python.analysis.typeCheckingMode": "off",
+    "rust-analyzer.diagnostics.disabled": ["inactive-code"]
 }
