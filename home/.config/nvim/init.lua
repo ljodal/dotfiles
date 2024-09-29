@@ -106,6 +106,26 @@ require("lazy").setup({
       'rafamadriz/friendly-snippets',
     },
   },
+  {
+    'stevearc/conform.nvim',
+    branch = "v5.5.0",
+    config = function()
+      -- Autoformatting
+      require("conform").setup({
+        formatters_by_ft = {
+          -- Conform will run multiple formatters sequentially
+          python = { "isort", "black" },
+          -- Use a sub-list to run only the first available formatter
+          javascript = { { "prettierd", "prettier" } },
+        },
+        format_on_save = {
+          -- These options will be passed to conform.format()
+          timeout_ms = 5000,
+          lsp_fallback = true,
+        },
+      })
+    end,
+  }
 })
 
 vim.wo.number = true     -- Always show line numbers
