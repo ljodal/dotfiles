@@ -1,5 +1,6 @@
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/sigurd/.gitignore
+	pager = less -+$LESS -RS
 [user]
 	name = Sigurd Ljødal
 	email = 544451+ljodal@users.noreply.github.com
